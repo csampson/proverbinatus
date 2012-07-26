@@ -725,7 +725,10 @@
 
 		$(function() {
 			QuoteEngine.init();
-			$('#generate_quote').on('click', function() { QuoteEngine.update(); });
+			$('#generate_quote').on('click', function() {
+				QuoteEngine.update();
+				_gaq.push(['_trackEvent', 'quotes', 'click', 'generate']);
+			});
 		});
 	</script>
 </head>
