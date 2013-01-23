@@ -15,6 +15,8 @@ class App < Sinatra::Base
     js_compression :yui
   }
 
+  set :scss, { :load_paths => [ "#{App.root}/assets/css" ] }
+
   get '/' do
     erb :index
   end

@@ -1,4 +1,6 @@
- html, body {
+@import 'bourbon/bourbon';
+
+html, body {
   height: 100%;
 }
 
@@ -43,9 +45,7 @@ a {
 }
 
 blockquote {
-  -moz-box-shadow: 0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+  @include box-shadow(0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5));
   border: 1px solid #000;
   background: #161616;
   text-align: center;
@@ -89,15 +89,10 @@ blockquote cite {
 }
 
 blockquote button {
-  -webkit-box-shadow: 0 0 1px #843D3D inset, 0 1px 2px #111;
-  -moz-box-shadow: 0 0 1px #843D3D inset, 0 1px 2px #111;
-  box-shadow: 0 0 1px #843D3D inset, 0 1px 2px #111;
+  @include box-shadow(0 0 1px #843D3D inset, 0 1px 2px #111);
   border: 1px solid #260000;
-  background: #671919;
-  background: -moz-linear-gradient(#7E1E1E, #4F0A0A);
-  background: -webkit-gradient(linear, center top, center bottom, from(#7E1E1E), to(#4F0A0A));
-  background: -ms-linear-gradient(#7E1E1E, #4F0A0A);
-  background: -o-linear-gradient(#7E1E1E, #4F0A0A);
+  background-color: #671919;
+  @include linear-gradient(#7E1E1E, #4F0A0A);
   color: white;
   text-shadow: 0 1px #000;
   font-family: inherit;
@@ -108,14 +103,9 @@ blockquote button {
 }
 
 blockquote button:hover, blockquote button:focus {
-  -webkit-box-shadow: 0 0 1px #843434 inset, 0 1px 2px #111;
-  -moz-box-shadow: 0 0 1px #843434 inset, 0 1px 2px #111;
-  box-shadow: 0 0 1px #843434 inset, 0 1px 2px #111;
-  background: #6C1919;
-  background: -moz-linear-gradient(#8C2121, #4A0A0A);
-  background: -webkit-gradient(linear, center top, center bottom, from(#8C2121), to(#4A0A0A));
-  background: -ms-linear-gradient(#8C2121, #4A0A0A);
-  background: -o-linear-gradient(#8C2121, #4A0A0A);
+  @include box-shadow(0 0 1px #843434 inset, 0 1px 2px #111);
+  background-color: #6C1919;
+  @include linear-gradient(#8C2121, #4A0A0A);
 }
 
 #container {
