@@ -3,18 +3,18 @@ var QuoteEngine = {
   init: function() {
     var blockquote = $('blockquote');
 
+    this.paragraph = blockquote.find('p');
+    this.citation = blockquote.find('cite');
+
     $.getJSON('/quotes', function(response) {
       QuoteEngine.quotes = response;
-      QuoteEngine.paragraph = blockquote.find('p');
-      QuoteEngine.citation = blockquote.find('cite');
-
       QuoteEngine.update();
     });
   },
   getQuote: function() {
     var new_quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
-    if(new_quote.text == this.current_quote.text)
+    if(new_quote.text === this.current_quote.text)
       return this.getQuote();
     else
       return new_quote;
@@ -27,7 +27,9 @@ var QuoteEngine = {
   },
   // fade out, then fade back in, with new content
   transition: function(element, new_text) {
-    element.stop().animate({opacity:0}, function() { $(this).html(new_text).animate({opacity:1}); });
+    element.stop().animate({opacity:0}, function() {
+      $(this).html(new_text).animate({opacity:1});
+    });
   }
 };
 

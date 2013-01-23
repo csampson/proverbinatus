@@ -24,12 +24,12 @@ class App < Sinatra::Base
     erb :index
   end
 
-  get '/quotes' do
+  get '/quotes/?' do
     content_type :json
     quotes.to_json
   end
 
-  get '/quotes/random' do
+  get '/quotes/random/?' do
     quotes.sample['text']
   end
 end
