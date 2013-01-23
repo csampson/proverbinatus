@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/assetpack'
+require 'json'
 
 class App < Sinatra::Base
   register Sinatra::AssetPack
@@ -17,7 +18,18 @@ class App < Sinatra::Base
 
   set :scss, { :load_paths => [ "#{App.root}/assets/css" ] }
 
+  quotes = JSON.parse(File.read('quotes.json'))
+
   get '/' do
     erb :index
+  end
+
+  get '/quotes' do
+    content_type :json
+    quotes.to_json
+  end
+
+  get '/quotes/random' do
+    quotes.sample['text']
   end
 end
