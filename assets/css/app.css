@@ -1,0 +1,219 @@
+ html, body {
+  height: 100%;
+}
+
+body {
+  background: #212121 url('/images/bg.png') repeat;
+  color: white;
+  font: normal 85%/1.15 Cambria, 'DejaVu Serif', 'Times New Roman', serif;
+  margin: 0;
+}
+
+header {
+  text-align: right;
+  height: 42px;
+  line-height: 42px;
+  margin: 0.5em 0;
+  overflow: hidden;
+}
+
+header p {
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  background: url('/images/logo.png') no-repeat;
+  -webkit-text-stroke: 0.25px; /* lololol */
+  font-family: 'Mate SC', Cambria, 'DejaVu Serif', 'Times New Roman', serif;
+  font-size: 150%;
+  font-weight: normal;
+  height: 100%;
+  padding-left: 48px;
+  margin: 0;
+  float: left;
+}
+
+h1 * {
+  vertical-align: middle;
+}
+
+a {
+  color: white;
+}
+
+blockquote {
+  -moz-box-shadow: 0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(100,100,100,.25) inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  background: #161616;
+  text-align: center;
+  min-height: 22em;
+  line-height: 18em;
+  padding: 0 1.5em;
+  margin: 0;
+  position: relative;
+}
+
+blockquote p {
+  -webkit-text-stroke: 0.25px; /* lololol */
+  font-family: 'Mate SC', Cambria, 'DejaVu Serif', 'Times New Roman', serif;
+  font-size: 250%;
+  line-height: normal;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+blockquote footer {
+  text-align: right;
+  height: 4em;
+  line-height: 4em;
+  padding: 0 1em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+blockquote footer::before {
+  content: '';
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #1C1C1C;
+  display: block;
+}
+
+blockquote cite {
+  font-size: 85%;
+  float: left;
+}
+
+blockquote button {
+  -webkit-box-shadow: 0 0 1px #843D3D inset, 0 1px 2px #111;
+  -moz-box-shadow: 0 0 1px #843D3D inset, 0 1px 2px #111;
+  box-shadow: 0 0 1px #843D3D inset, 0 1px 2px #111;
+  border: 1px solid #260000;
+  background: #671919;
+  background: -moz-linear-gradient(#7E1E1E, #4F0A0A);
+  background: -webkit-gradient(linear, center top, center bottom, from(#7E1E1E), to(#4F0A0A));
+  background: -ms-linear-gradient(#7E1E1E, #4F0A0A);
+  background: -o-linear-gradient(#7E1E1E, #4F0A0A);
+  color: white;
+  text-shadow: 0 1px #000;
+  font-family: inherit;
+  font-size: 85%;
+  cursor: pointer;
+  line-height: normal;
+  padding: 0.75em 2.5em;
+}
+
+blockquote button:hover, blockquote button:focus {
+  -webkit-box-shadow: 0 0 1px #843434 inset, 0 1px 2px #111;
+  -moz-box-shadow: 0 0 1px #843434 inset, 0 1px 2px #111;
+  box-shadow: 0 0 1px #843434 inset, 0 1px 2px #111;
+  background: #6C1919;
+  background: -moz-linear-gradient(#8C2121, #4A0A0A);
+  background: -webkit-gradient(linear, center top, center bottom, from(#8C2121), to(#4A0A0A));
+  background: -ms-linear-gradient(#8C2121, #4A0A0A);
+  background: -o-linear-gradient(#8C2121, #4A0A0A);
+}
+
+#container {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#content {
+  min-width: 700px;
+  width: 65%;
+  padding-bottom: 3em;
+  margin: 5% auto 0;
+}
+
+#page_footer {
+  font-size: 85%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#page_footer p::before, #page_footer p::after {
+  content: '++';
+  color: #7E1E1E;
+  font-weight: bold;
+  margin: 1ex;
+}
+
+@media (max-width:700px) {
+  #content {
+    min-width: 0;
+    width: 85%;
+  }
+  
+  blockquote p {
+    font-size: 200%;
+  }
+}
+
+@media (max-width:600px) {
+  header {
+    text-align: center;
+  }
+
+  header h1 {
+    float: none;
+    display: inline-block;
+  }
+
+  header p {
+    display: none;
+  }
+}
+
+@media (max-width:400px) {
+  #content {
+    min-width: 0;
+    width: 95%;
+    padding-bottom: 6em;
+  }
+
+  blockquote {
+    padding: 0;
+  }
+
+  blockquote footer {
+    text-align: center;
+    padding: 0;
+    position: static;
+  }
+
+  blockquote cite {
+    float: none;
+  }
+
+  blockquote button {
+    width: 100%;
+    font-size: 115%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+
+@media (orientation:landscape) and (max-height: 400px) {
+  #content {
+    margin: 0 auto;
+  }
+
+  blockquote {
+    min-height: 0;
+    height: 16em;
+    line-height: 12em;
+  }
+
+  blockquote p {
+    font-size: 150%;
+  }
+}

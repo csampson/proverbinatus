@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+  <meta http-equiv='Content-type' content='text/html;charset=utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='A small tool to grab a random grimdark wise saying.' />
+  <title>Proverbinatus - Warhammer 40k words of wisdom</title>
+  <link rel='shortcut icon' href='/favicon.ico' />
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link href='//fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css' />
+  <%= css :app %>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33677862-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+</head>
+<body>
+  <div id='container'>
+    <div id='content'>
+      <header>
+        <h1>PROVERBINATUS</h1>
+        <p>Warhammer 40000&trade; words of wisdom</p>
+      </header>
+
+      <blockquote>
+        <p></p>
+
+        <footer>
+          <cite></cite>
+          <button id='generate_quote' type='button'>Random quote</button>
+        </footer>
+      </blockquote>
+    </div>
+
+    <footer id='page_footer'>
+      <p>Site by <a href='http://roguespark.com'>Cameron Sampson</a></p>
+    </footer>
+  </div>
+
+  <%= js :app %>
+</body>
+</html>
