@@ -15,15 +15,7 @@ class App < Sinatra::Base
     js_compression :yui
   }
 
-  def get_quotes
-
-  end
-
   get '/' do
     erb :index
-  end
-
-  get '/get_quote' do
-    #random quote
   end
 end
