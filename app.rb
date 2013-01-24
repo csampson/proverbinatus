@@ -30,6 +30,6 @@ class App < Sinatra::Base
   end
 
   get '/quotes/random/?' do
-    quotes.sample['text']
+    quotes.sample['text']+"\n"
   end
 end
