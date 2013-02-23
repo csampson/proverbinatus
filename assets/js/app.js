@@ -23,7 +23,7 @@ var QuoteEngine = {
     this.current_quote = this.getQuote();
 
     this.transition(this.paragraph, this.current_quote.text);
-    this.transition(this.citation, this.current_quote.src);
+    this.transition(this.citation, this.current_quote.citation);
   },
   // fade out, then fade back in, with new content
   transition: function(element, new_text) {

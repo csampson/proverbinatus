@@ -30,6 +30,16 @@ class App < Sinatra::Base
   end
 
   get '/quotes/random/?' do
-    quotes.sample['text']+"\n"
+    if params['topic']
+      matching_quotes = quotes.select{|quote| quote['topics'].include? params['topic']}
+
+      if matching_quotes.length > 0
+        matching_quotes.sample['text']+"\n"
+      else
+        'No matching quotes found.'+"\n"
+      end
+    else
+      quotes.sample['text']+"\n"
+    end
   end
 end
