@@ -18,8 +18,9 @@ class App < Sinatra::Base
 
   set :scss, { :load_paths => [ "#{App.root}/assets/css" ] }
 
-  quotes = JSON.parse(File.read('quotes.json'))
+  quotes = JSON.parse(File.read('quotes.json'), :symbolize_names => true)
 
+  # trailing newline is zany, but will stay...for now
   def text_response(text)
     text+"\n"
   end
@@ -34,16 +35,16 @@ class App < Sinatra::Base
   end
 
   get '/quotes/random/?' do
-    if !params[:topic]
-      return respond(quotes.sample[:text])
-    end
+    text_response quotes.sample[:text]
+  end
 
+  get '/quotes/random/:topic/?' do
     matching_quotes = quotes.select{|quote| quote[:topics].include? params[:topic]}
 
     if matching_quotes.length > 0
-      respond matching_quotes.sample[:text]
+      text_response matching_quotes.sample[:text]
     else
-      respond 'No matching quotes found.'
+      text_response 'No matching quotes found.'
     end
   end
 end
