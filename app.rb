@@ -20,11 +20,6 @@ class App < Sinatra::Base
 
   quotes = JSON.parse(File.read('quotes.json'), :symbolize_names => true)
 
-  # trailing newline is zany, but will stay...for now
-  def text_response(text)
-    text+"\n"
-  end
-
   get '/' do
     erb :index
   end
@@ -35,16 +30,16 @@ class App < Sinatra::Base
   end
 
   get '/quotes/random/?' do
-    text_response quotes.sample[:text]
+    quotes.sample[:text]
   end
 
   get '/quotes/random/:topic/?' do
     matching_quotes = quotes.select{|quote| quote[:topics].include? params[:topic]}
 
     if matching_quotes.length > 0
-      text_response matching_quotes.sample[:text]
+      matching_quotes.sample[:text]
     else
-      text_response 'No matching quotes found.'
+      'No matching quotes found.'
     end
   end
 end
