@@ -1,7 +1,7 @@
 Proverbinatus
 =============
 
-Proverbinatus is a sinatra app to show and fetch Warhammer 40k proverbs('Thought for the day').
+Proverbinatus is a sinatra app to show and fetch [Warhammer 40,000](http://en.wikipedia.org/wiki/Warhammer_40,000) proverbs('Thought for the day').
 
 Quotes/proverbs are stored as JSON in a flat manner, with the following keys:
 - `text` the actual quote text
