@@ -1,4 +1,4 @@
-[{
+/*[{
   "text": "There is no such thing as innocence - only varying degrees of guilt.",
   "citation": "Codex: Black Templars(4th edition)",
   "topics": ["innocence", "guilt"]
@@ -547,4 +547,10 @@
   "text": "Claims of innocence mean nothing; they serve only to prove a foolish lack of caution.",
   "citation": "Codex Imperialis",
   "topics": ["innocence"]
+}]*/
+
+[{
+  "text": "I could clear the sky in 10 seconds flat!",
+  "citation": "Rainbow Dash",
+  "topics": []
 }]

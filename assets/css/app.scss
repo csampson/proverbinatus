@@ -25,13 +25,13 @@ header p {
 }
 
 h1 {
-  background: url('/images/logo.png') no-repeat;
+  background: url('/images/logo_mlp.png') no-repeat;
   -webkit-text-stroke: 0.25px; /* lololol */
   font-family: 'Mate SC', Cambria, 'DejaVu Serif', 'Times New Roman', serif;
   font-size: 150%;
   font-weight: normal;
   height: 100%;
-  padding-left: 48px;
+  padding-left: 55px;
   margin: 0;
   float: left;
 }
@@ -59,7 +59,7 @@ blockquote {
 blockquote p {
   -webkit-text-stroke: 0.25px; /* lololol */
   font-family: 'Mate SC', Cambria, 'DejaVu Serif', 'Times New Roman', serif;
-  font-size: 250%;
+  font-size: 200%;
   line-height: normal;
   vertical-align: middle;
   display: inline-block;
@@ -86,27 +86,32 @@ blockquote footer::before {
 blockquote cite {
   font-size: 85%;
   float: left;
+
+  img {
+    vertical-align: middle;
+    margin-right: 1ex;
+  }
 }
 
 blockquote button {
-  @include box-shadow(0 0 1px #843D3D inset, 0 1px 2px #111);
-  border: 1px solid #260000;
-  background-color: #671919;
-  @include linear-gradient(#7E1E1E, #4F0A0A);
-  color: white;
-  text-shadow: 0 1px #000;
+  // @include box-shadow(0 0 1px #843D3D inset, 0 1px 2px #111);
+  border: 1px solid rgb(148, 148, 52);
+  background-color: #D0B74E;
+  @include linear-gradient(rgb(201, 175, 66), rgb(163, 139, 36));
+  color: black;
   font-family: inherit;
   font-size: 85%;
+  font-weight: bold;
   cursor: pointer;
   line-height: normal;
   padding: 0.75em 2.5em;
 }
 
-blockquote button:hover, blockquote button:focus {
-  @include box-shadow(0 0 1px #843434 inset, 0 1px 2px #111);
-  background-color: #6C1919;
-  @include linear-gradient(#8C2121, #4A0A0A);
-}
+// blockquote button:hover, blockquote button:focus {
+//   @include box-shadow(0 0 1px #843434 inset, 0 1px 2px #111);
+//   background-color: #6C1919;
+//   @include linear-gradient(#8C2121, #4A0A0A);
+// }
 
 #container {
   min-height: 100%;
@@ -132,7 +137,7 @@ blockquote button:hover, blockquote button:focus {
 
 #page_footer p::before, #page_footer p::after {
   content: '++';
-  color: #7E1E1E;
+  color: #C3A93D;
   font-weight: bold;
   margin: 1ex;
 }

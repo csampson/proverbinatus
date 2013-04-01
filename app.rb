@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/assetpack'
 require 'json'
+require 'nokogiri'
+require 'open-uri'
 
 class App < Sinatra::Base
   register Sinatra::AssetPack
@@ -18,7 +20,21 @@ class App < Sinatra::Base
 
   set :scss, { :load_paths => [ "#{App.root}/assets/css" ] }
 
-  quotes = JSON.parse(File.read('quotes.json'), :symbolize_names => true)
+  def self.parse_quotes(url)
+    response = open(url).read
+    doc = Nokogiri::HTML.parse(response)
+
+    quotes = doc.css('.quote-block').map do |quote_block|
+      {
+        :text => quote_block.css('.text').first.text.strip,
+        :citation => quote_block.css('.img img').first.to_s + quote_block.css('.name').first.text.strip,
+        :topics => []
+      }
+    end
+  end
+
+  # quotes = JSON.parse(File.read('quotes.json'), :symbolize_names => true)
+  quotes = parse_quotes('http://www.screened.com/my-little-pony-friendship-is-magic/17-31970/quotes/')
 
   get '/' do
     erb :index
