@@ -4,11 +4,12 @@
   <meta http-equiv='Content-type' content='text/html;charset=utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <meta name='description' content='A small tool to grab a random grimdark wise saying.' />
-  <title>Proverbinatus - Warhammer 40k words of wisdom</title>
+  <title>Proverbinatus</title>
   <link rel='shortcut icon' href='/favicon.ico' />
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <link href='//fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css' />
   <%= css :app %>
+  <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Caudex' rel='stylesheet' type='text/css'>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -22,31 +23,21 @@
     })();
 
   </script>
-  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
 </head>
 <body>
-  <div id='container'>
-    <div id='content'>
-      <header>
-        <h1>PROVERBINATUS</h1>
-        <p>Warhammer 40000&trade; words of wisdom</p>
-      </header>
-
-      <blockquote>
-        <p></p>
-
-        <footer>
-          <cite></cite>
-          <button id='generate_quote' type='button'>Random quote</button>
-        </footer>
-      </blockquote>
+  <div id='page'>
+    <div id='proverb'>
+      <blockquote></blockquote>
     </div>
 
-    <footer id='page_footer'>
-      <p>Site by <a href='http://roguespark.com'>Cameron Sampson</a></p>
-    </footer>
-  </div>
+    <button id='random-proverb' type='button'>Random proverb</button>
 
+    <header>
+      <span id='logo'><img src='/images/logo.png' alt='' /> <span>Proverbinatus</span></span>
+      <p>Warhammer 40,000&reg; words of wisdom</p>
+    </header>
+  </div>
   <%= js :app %>
 </body>
 </html>

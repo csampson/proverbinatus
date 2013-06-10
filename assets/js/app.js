@@ -1,39 +1,38 @@
 var QuoteEngine = {
-  current_quote: {},
-  init: function() {
-    var blockquote = $('blockquote');
+  currentQuote: {},
+  _getQuote: function() {
+    var newQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
-    this.paragraph = blockquote.find('p');
-    this.citation = blockquote.find('cite');
+    if(newQuote.text === this.currentQuote.text)
+      return this.getQuote();
+    else
+      return newQuote;
+  },
+  // fade out, then fade back in, with new content
+  _transition: function(element, newText) {
+    element.stop().animate({opacity:0}, function() {
+      $(this).html(newText).animate({opacity:1});
+    });
+  },
+  init: function() {
+    this.blockquote = $('blockquote');
 
     $.getJSON('/quotes', function(response) {
       QuoteEngine.quotes = response;
       QuoteEngine.update();
     });
-  },
-  getQuote: function() {
-    var new_quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
-    if(new_quote.text === this.current_quote.text)
-      return this.getQuote();
-    else
-      return new_quote;
+    return this;
   },
   update: function() {
-    this.current_quote = this.getQuote();
+    this.currentQuote = this._getQuote();
+    this._transition(this.blockquote, this.currentQuote.text);
 
-    this.transition(this.paragraph, this.current_quote.text);
-    this.transition(this.citation, this.current_quote.citation);
-  },
-  // fade out, then fade back in, with new content
-  transition: function(element, new_text) {
-    element.stop().animate({opacity:0}, function() {
-      $(this).html(new_text).animate({opacity:1});
-    });
+    return this;
   }
 };
 
-$('#generate_quote').on('click', function() {
+$('#random-proverb').on('click', function() {
   QuoteEngine.update();
   _gaq.push(['_trackEvent', 'quotes', 'click', 'generate']);
 });
