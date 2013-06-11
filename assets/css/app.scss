@@ -37,6 +37,11 @@ body {
   font: inherit;
   cursor: pointer;
   padding: 0.75em 5em;
+
+  &:hover, &:focus {
+    outline: none;
+    @include linear-gradient(#721C1C, #591616);
+  }
 }
 
 header {
@@ -59,13 +64,16 @@ header {
   margin-top: 1em;
   display: inline-block;
 
-  img {
-    margin-right: 1ex;
+  img, span {
     vertical-align: middle;
   }
 
+  img {
+    margin-right: 1ex;
+  }
+
   span {
-    font-size: 115%;
+    font-size: 150%;
   }
 }
 
