@@ -15,7 +15,7 @@ var QuoteEngine = {
     });
   },
   init: function() {
-    this.blockquote = $('blockquote');
+    this.quoteElement = $('blockquote p');
 
     $.getJSON('/quotes', function(response) {
       QuoteEngine.quotes = response;
@@ -26,7 +26,7 @@ var QuoteEngine = {
   },
   update: function() {
     this.currentQuote = this._getQuote();
-    this._transition(this.blockquote, this.currentQuote.text);
+    this._transition(this.quoteElement, this.currentQuote.text);
 
     return this;
   }
