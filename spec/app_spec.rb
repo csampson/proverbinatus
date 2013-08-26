@@ -11,13 +11,16 @@ describe 'App' do
   it 'can return all quotes' do
     get '/quotes'
     last_response.should be_ok
-    JSON.parse(last_response.body).should_not be_empty
   end
 
   it 'can return a random quote' do
     get '/quotes/random'
     last_response.should be_ok
-    last_response.body.should_not be_empty
+  end
+
+  it 'can return a random quote of a specific topic' do
+    get '/quotes/random/heresy'
+    last_response.should be_ok
   end
 
   it 'should have quotes with citations' do
