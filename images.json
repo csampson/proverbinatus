@@ -2,6 +2,9 @@
   "taylor_swift": {
     "file": "assets/images/taylor_swift01.png",
     "text_width": 451,
-    "text_height": 210
+    "text_height": 210,
+    "font_family": "arial",
+    "font_size": 26,
+    "column_width": 35
   }
 }

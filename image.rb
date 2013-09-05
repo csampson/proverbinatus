@@ -11,6 +11,9 @@ class Image
     @text = text
     @text_width = options[:text_width]
     @text_height = options[:text_height]
+    @font_family = options[:font_family]
+    @font_size = options[:font_size]
+    @column_width = options[:column_width]
   end
 
   def draw!
@@ -18,11 +21,13 @@ class Image
     img = Magick::Image.read(@file).first
 
     # Add the text
-    draw_text_on img, text: word_wrap(@text, 29),
-                      pointsize: 32,
+    draw_text_on img, text: word_wrap(@text, @column_width),
+                      pointsize: @font_size,
                       gravity: Magick::SouthEastGravity,
                       width: @text_width,
-                      height: @text_height
+                      height: @text_height,
+                      font_family: @font_family,
+                      pointsize: @font_size
 
     # Add branding
     draw_text_on img, text: 'http://proverbinatus.com/',
