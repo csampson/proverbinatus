@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/assetpack'
 require 'json'
 
+require_relative 'image'
+
 class App < Sinatra::Base
   register Sinatra::AssetPack
 
@@ -19,6 +21,7 @@ class App < Sinatra::Base
   set :scss, { :load_paths => [ "#{App.root}/assets/css" ] }
 
   quotes = JSON.parse(File.read('quotes.json'), :symbolize_names => true)
+  images = JSON.parse(File.read('images.json'), :symbolize_names => true)
 
   get '/' do
     erb :index
@@ -41,5 +44,15 @@ class App < Sinatra::Base
     else
       'No matching quotes found.'
     end
+  end
+
+  get '/images/:image/?' do
+    content_type 'image/png'
+
+    image_config = images[params[:image].to_sym]
+    image = Image.new quotes.sample[:text], image_config
+    image.draw!
+
+    image.to_blob
   end
 end
