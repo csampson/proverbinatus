@@ -14,8 +14,6 @@ class App < Sinatra::Base
 
     css :app, ['css/app.css']
     js :app, ['js/app.js']
-
-    js_compression :yui
   }
 
   set :scss, { :load_paths => [ "#{App.root}/assets/css" ] }
