@@ -13,19 +13,17 @@
     },
     // fade out, then fade back in, with new content
     _transition: function(element, newText) {
-      element.stop().animate({ opacity:0 }, function() {
-        $(this).html(newText).animate({opacity:1});
+      element.stop().animate({ opacity: 0 }, function() {
+        $(this).html(newText).animate({ opacity:1 });
       });
     },
     init: function() {
       this.quoteElement = $('.proverb-body');
 
-      $.getJSON('/quotes', function(response) {
+      return $.getJSON('/quotes', function(response) {
         QuoteEngine.quotes = response;
         QuoteEngine.update();
       });
-
-      return this;
     },
     update: function() {
       this.currentQuote = this._getQuote();
