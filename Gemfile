@@ -8,6 +8,5 @@ gem "sinatra", "~> 1.4.7"
 gem "sprockets", "~> 3.5.2"
 gem "thin", "~> 1.6.4"
 gem "tilt", "~> 2.0.2"
-
-gem 'uglifier', '~> 3.0.0'
 gem 'execjs', '~> 2.6.0'
+gem 'uglifier', '~> 3.0.0'
