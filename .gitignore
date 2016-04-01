@@ -1,2 +1,4 @@
+config/newrelic.yml
+log
 .rspec
 

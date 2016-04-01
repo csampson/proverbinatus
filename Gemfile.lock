@@ -6,6 +6,7 @@ GEM
     diff-lcs (1.2.5)
     eventmachine (1.2.0.1)
     execjs (2.6.0)
+    newrelic_rpm (3.15.1.316)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -43,6 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   execjs (~> 2.6.0)
+  newrelic_rpm (~> 3.15.1.316)
   rack (~> 1.6.4)
   rack-protection (= 1.5.3)
   rmagick (~> 2.15.4)

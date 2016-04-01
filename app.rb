@@ -1,4 +1,5 @@
 require "sinatra"
+require 'newrelic_rpm'
 require "sprockets"
 require "uglifier"
 require "json"
