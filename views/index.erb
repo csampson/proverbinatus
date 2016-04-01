@@ -26,16 +26,22 @@
   <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
 </head>
 <body>
-  <div id='page'>
-    <blockquote id='proverb'><p></p></blockquote>
+  <main class='page'>
+    <blockquote class='proverb'>
+      <p class='proverb-body'></p>
+    </blockquote>
 
-    <button id='random-proverb' type='button'>Random proverb</button>
+    <button class='proverb-generate' type='button'>Random proverb</button>
 
-    <header>
-      <span id='logo'><img src='assets/logo.png' alt='' /> <span>Proverbinatus</span></span>
-      <p>Warhammer 40,000&reg; words of wisdom</p>
-    </header>
-  </div>
+    <footer class='page-footer'>
+      <span class='logo'>
+        <img class='logo-image' src='assets/logo.png' alt='' />
+        <span class='logo-text'>Proverbinatus</span>
+      </span>
+
+      <p class='page-footer-text'>Warhammer 40,000&reg; words of wisdom</p>
+    </footer>
+  </main>
 
   <script src='assets/app.js'></script>
 </body>

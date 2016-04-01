@@ -1,40 +1,45 @@
-var QuoteEngine = {
-  currentQuote: {},
-  _getQuote: function() {
-    var newQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+(function($, analytics) {
+  'use strict';
 
-    if(newQuote.text === this.currentQuote.text)
-      return this._getQuote();
-    else
-      return newQuote;
-  },
-  // fade out, then fade back in, with new content
-  _transition: function(element, newText) {
-    element.stop().animate({opacity:0}, function() {
-      $(this).html(newText).animate({opacity:1});
-    });
-  },
-  init: function() {
-    this.quoteElement = $('blockquote p');
+  var QuoteEngine = {
+    currentQuote: {},
+    _getQuote: function() {
+      var newQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
-    $.getJSON('/quotes', function(response) {
-      QuoteEngine.quotes = response;
-      QuoteEngine.update();
-    });
+      if(newQuote.text === this.currentQuote.text)
+        return this._getQuote();
+      else
+        return newQuote;
+    },
+    // fade out, then fade back in, with new content
+    _transition: function(element, newText) {
+      element.stop().animate({ opacity:0 }, function() {
+        $(this).html(newText).animate({opacity:1});
+      });
+    },
+    init: function() {
+      this.quoteElement = $('.proverb-body');
 
-    return this;
-  },
-  update: function() {
-    this.currentQuote = this._getQuote();
-    this._transition(this.quoteElement, this.currentQuote.text);
+      $.getJSON('/quotes', function(response) {
+        QuoteEngine.quotes = response;
+        QuoteEngine.update();
+      });
 
-    return this;
-  }
-};
+      return this;
+    },
+    update: function() {
+      this.currentQuote = this._getQuote();
+      this._transition(this.quoteElement, this.currentQuote.text);
 
-$('#random-proverb').on('click', function() {
-  QuoteEngine.update();
-  _gaq.push(['_trackEvent', 'quotes', 'click', 'generate']);
-});
+      return this;
+    }
+  };
 
-QuoteEngine.init();
+  $('.proverb-generate').on('click', function() {
+    QuoteEngine.update();
+    analytics.push(['_trackEvent', 'quotes', 'click', 'generate']);
+  });
+
+  QuoteEngine.init();
+
+})(window.jQuery, window._gaq);
