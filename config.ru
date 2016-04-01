@@ -1,4 +1,4 @@
-require './app'
+require "./app"
 
-App.set :run, false
+# App.set :run, false
 run App

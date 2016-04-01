@@ -1,5 +1,3 @@
-@import 'bourbon/bourbon';
-
 body {
   background: #212121 url('/images/bg.png') repeat;
   color: #EEE;
@@ -20,11 +18,11 @@ body {
   height: 5.5em;
   margin: 0;
   display: table;
+}
 
-  p {
-    vertical-align: middle;
-    display: table-cell;
-  }
+#proverb p {
+  vertical-align: middle;
+  display: table-cell;
 }
 
 #random-proverb {
@@ -32,49 +30,51 @@ body {
   box-shadow: 0 1px 1px -1px #BD6A6A inset;
   border: 1px solid #171717;
   border-bottom-color: #080808;
-  @include linear-gradient(#671919, #501414);
+  background: linear-gradient(#671919, #501414);
   color: white;
   font: inherit;
   cursor: pointer;
   padding: 0.75em 5em;
+}
 
-  &:hover, &:focus {
-    outline: none;
-    @include linear-gradient(#721C1C, #591616);
-  }
+#random-proverb:hover,
+#random-proverb:focus {
+  outline: none;
+  background: linear-gradient(#721C1C, #591616);
 }
 
 header {
   border-top: 1px solid #111;
   margin: 1em auto 0;
   display: table;
+}
 
-  &:before {
-    content: '';
-    border-bottom: 1px solid #333;
-    display: block;
-  }
+header::before {
+  content: '';
+  border-bottom: 1px solid #333;
+  display: block;
+}
 
-  p {
-    font-size: 85%;
-  }
+header p {
+  font-size: 85%;
 }
 
 #logo {
   margin-top: 1em;
   display: inline-block;
+}
 
-  img, span {
-    vertical-align: middle;
-  }
+#logo img,
+#logo span {
+  vertical-align: middle;
+}
 
-  img {
-    margin-right: 1ex;
-  }
+#logo img {
+  margin-right: 1ex;
+}
 
-  span {
-    font-size: 150%;
-  }
+#logo span {
+  font-size: 150%;
 }
 
 @media (max-width: 50em) {

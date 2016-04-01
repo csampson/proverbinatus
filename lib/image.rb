@@ -1,4 +1,4 @@
-require 'RMagick'
+require 'rmagick'
 
 class Image
   HEIGHT  = 315
@@ -26,11 +26,10 @@ class Image
                       gravity: Magick::SouthEastGravity,
                       width: @text_width,
                       height: @text_height,
-                      font_family: @font_family,
-                      pointsize: @font_size
+                      font_family: @font_family
 
     # Add branding
-    draw_text_on img, text: 'http://proverbinatus.com/',
+    draw_text_on img, text: 'www.proverbinatus.com',
                       pointsize: 12,
                       gravity: Magick::SouthEastGravity,
                       width: WIDTH,

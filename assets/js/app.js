@@ -4,7 +4,7 @@ var QuoteEngine = {
     var newQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
     if(newQuote.text === this.currentQuote.text)
-      return this.getQuote();
+      return this._getQuote();
     else
       return newQuote;
   },

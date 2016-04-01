@@ -3,18 +3,16 @@
 <head>
   <meta http-equiv='Content-type' content='text/html;charset=utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='A small tool to grab a random grimdark wise saying.' />
+  <meta name='description' content='A simple tool to grab a random grimdark wise-saying.' />
   <title>Proverbinatus</title>
   <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
   <link rel='apple-touch-icon' sizes='144x144' href='/images/apple-touch-icon-144x144.png' />
   <link rel='apple-touch-icon' sizes='114x114' href='/images/apple-touch-icon-114x114.png' />
   <link rel='apple-touch-icon' sizes='72x72' href='/images/apple-touch-icon-72x72.png' />
   <link rel='apple-touch-icon' href='/images/apple-touch-icon.png' />
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <%= css :app %>
-  <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
-  <script type="text/javascript">
-
+  <link href='assets/app.css' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css' />
+  <script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33677862-1']);
     _gaq.push(['_trackPageview']);
@@ -24,9 +22,8 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-
   </script>
-  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
 </head>
 <body>
   <div id='page'>
@@ -35,10 +32,11 @@
     <button id='random-proverb' type='button'>Random proverb</button>
 
     <header>
-      <span id='logo'><img src='/images/logo.png' alt='' /> <span>Proverbinatus</span></span>
+      <span id='logo'><img src='assets/logo.png' alt='' /> <span>Proverbinatus</span></span>
       <p>Warhammer 40,000&reg; words of wisdom</p>
     </header>
   </div>
-  <%= js :app %>
+
+  <script src='assets/app.js'></script>
 </body>
 </html>
