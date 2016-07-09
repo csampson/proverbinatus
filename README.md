@@ -2,14 +2,14 @@
 
 ## Overview
 
-An app to display and fetch [Warhammer 40,000](http://en.wikipedia.org/wiki/Warhammer_40,000) proverbs(an Imperial 'Thought for the day').
+An app to display and fetch [Warhammer 40,000](http://en.wikipedia.org/wiki/Warhammer_40,000) proverbs (an Imperial 'Thought for the day').
 
 ## The Stack
 
 `sinatra` - web framework   
 `thin` - web server   
 `sprockets` - static asset middleware   
-`rmagick` - image generation/manipulation library
+`rmagick` - image generation/manipulation library   
 `rspec` - BDD testing framework
 
 ## Data Storage
