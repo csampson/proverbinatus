@@ -1,14 +1,13 @@
 source "https://rubygems.org"
-ruby "2.3.0"
+ruby "3.4.4"
 
-gem 'newrelic_rpm', '~> 3.15.1.316'
-gem "rack", "~> 1.6.4"
-gem "rack-protection", "1.5.3"
-gem "rmagick", "~> 2.15.4"
-gem "rspec", "~> 3.4.0"
-gem "sinatra", "~> 1.4.7"
-gem "sprockets", "~> 3.5.2"
-gem "thin", "~> 1.6.4"
-gem "tilt", "~> 2.0.2"
-gem 'execjs', '~> 2.6.0'
-gem 'uglifier', '~> 3.0.0'
+gem "rack", "~> 2.2"
+gem "rack-protection", "~> 3.2"
+gem "rmagick", "~> 6.0"
+gem "rspec", "~> 3.13"
+gem "sinatra", "~> 3.2"
+gem "sprockets", "~> 4.2"
+gem "thin", "~> 1.8"
+gem "tilt", "~> 2.4"
+gem 'execjs', '~> 2.9'
+gem 'uglifier', '~> 4.2'

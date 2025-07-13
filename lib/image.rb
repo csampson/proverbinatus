@@ -60,9 +60,8 @@ class Image
     draw.pointsize = pointsize
     draw.gravity = gravity
 
-    draw.annotate image, width, height, x, y, text do
-      self.fill = fill_color
-    end
+    draw.fill = fill_color
+    draw.annotate image, width, height, x, y, text
   end
 
   def word_wrap(text, columns = 80)
