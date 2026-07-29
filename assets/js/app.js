@@ -3,13 +3,30 @@
 
   var QuoteEngine = {
     currentQuote: {},
-    _getQuote: function() {
-      var newQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+    deck: [],
+    // Fisher-Yates shuffle
+    _shuffle: function(quotes) {
+      for(var i = quotes.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = quotes[i];
+        quotes[i] = quotes[j];
+        quotes[j] = temp;
+      }
+      return quotes;
+    },
+    _refillDeck: function() {
+      this.deck = this._shuffle(this.quotes.slice());
 
-      if(newQuote.text === this.currentQuote.text)
-        return this._getQuote();
-      else
-        return newQuote;
+      // avoid repeating the quote that was just shown across the reshuffle
+      if(this.deck.length > 1 && this.deck[0].text === this.currentQuote.text) {
+        this.deck.push(this.deck.shift());
+      }
+    },
+    _getQuote: function() {
+      if(this.deck.length === 0)
+        this._refillDeck();
+
+      return this.deck.shift();
     },
     // fade out, then fade back in, with new content
     _transition: function(element, newText) {
